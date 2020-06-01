@@ -1,0 +1,2 @@
+class RocketsController < ApplicationController
+end
