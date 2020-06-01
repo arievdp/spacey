@@ -1,5 +1,5 @@
 class RocketsController < ApplicationController
-  before_action :find_rocket only: [:show, :edit, :update, :destroy]
+  before_action :find_rocket, only: [:show, :edit, :update, :destroy]
 
   def index
     @rockets = Rocket.all
