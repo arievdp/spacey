@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :order, dependant: :destroy
-  validates :rating, prescence: :true
+  belongs_to :order, dependent: :destroy
+  validates :rating, presence: true
 end
