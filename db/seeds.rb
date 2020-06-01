@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'Creating 20 fake users'
+10.times do
+  new_user = User.new(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  user_name: Faker::Movies::StarWars.call_number,
+  phone_number: Faker::PhoneNumber.phone_number,
+  category: Faker::Restaurant.type
+  )
+  new_user.save!
+end
+
+puts 'Finished!'
+
+
+
+
+User.New(first_name: "")
+
+
+Rocket.create(name: "Magie 9", payload: "900 Kilograms", price: "99", description: "A good ol rocket")
+
