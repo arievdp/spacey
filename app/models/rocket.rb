@@ -1,7 +1,7 @@
 class Rocket < ApplicationRecord
   belongs_to :user
   has_many :orders
-  validates :name :payload :price :description :loaction, presence: true
+  validates :name, :payload, :price, :description, :location, presence: true
   validates :name, uniqueness: true
   validates :price, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { greater_than: 0, less_than: 1000000 }
 end
