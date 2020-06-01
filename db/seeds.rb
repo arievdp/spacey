@@ -27,5 +27,5 @@ puts 'Finished!'
 User.New(first_name: "")
 
 
-Rocket.create(name: "Magie 9", payload: "900 Kilograms", price: "99", description: "A good ol rocket")
+Rocket.create(name: "Magpie 9", payload: "900 Kilograms", price: "99", description: "A good ole' rocket")
 
