@@ -27,10 +27,10 @@
       <table class="table table-striped">
         <tr>
           <th>Rocket name</th>
-          <th>Status</th>
         <tr>
           <% @user.rockets.each do |rocket|%>
            <td><%= rocket.name%></td>
+
           <% end %>
          </tr>
       </table>
