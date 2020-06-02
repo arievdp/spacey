@@ -10,3 +10,18 @@
 .rocket-location {
   border-radius: 12px !important;
 }
+
+.img-container-rocket-index {
+  height: 150px;
+  background-color: light-gray;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px !important;
+  margin-top: 24px !important;
+  border-radius: 12px !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url(https://images.immediate.co.uk/production/volatile/sites/4/2019/09/GettyImages-471296532-c-db7bc08.jpg?quality=45&resize=960,413);
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;              /* optional, center the image */
+  h1 {
+    color: white;
+  }
+}

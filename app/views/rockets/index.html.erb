@@ -1,5 +1,10 @@
-<div class="container">
-  <h1>Rockets List</h1>
+<div class="container mt-3 ">
+  <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center">
+    <h1>Rockets available for hire</h1>
+  </div>
+</div>
+
+<div class="container mt-4">
   <div class="cards card-container">
     <% @rockets.each do |rocket| %>
       <div class="card" style="width: 18rem;">
@@ -14,8 +19,6 @@
         </div>
       </div>
   <% end %>
-
   </div>
-
 </div>
 
