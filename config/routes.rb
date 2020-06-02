@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:new, :create]
 
   resources :users, except: :index do
+    resources :rocket, only: [:new, :create, :edit, :update, :destroy]
     collection do
       get :dashboard
     end
