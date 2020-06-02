@@ -2,18 +2,17 @@
   <div class="row d-flex">
     <div class="col-sm-12 col-md-6">
       <h1>User Dashboard</h1>
+
       <h5><strong>Welcome back! </strong><span><%= current_user.first_name %></span> <span><%= current_user.last_name %></span></h5>
       <p><%= current_user.email %></p>
       <p><%= current_user.phone_number%></p>
       
-
       <table class="table table-striped"><strong>Orders</strong>
         <tr>
           <th>Order #</th>
           <th>Start Date</th>
           <th>End Date</th>
           <th>Status</th>
-        
         <tr>
           <% @user.orders.each do |order|%>
           <td><%= order.id%></td>
@@ -30,11 +29,11 @@
         <h3>Rockets</h3>
         <%= link_to 'Add Rocket ', new_rocket_path(@rocket), class:'btn btn-primary'%>
       </div>
+
       <table class="table table-striped">
         <tr>
           <th>Rocket name</th>
           <th>Status</th>
-        
         <tr>
           <% @user.rockets.each do |rocket|%>
           <td><%= rocket.name%></td>
@@ -42,8 +41,7 @@
           <% end %>
         </tr>
       </table>
-
-
     </div>
   </div>
 </div>
+

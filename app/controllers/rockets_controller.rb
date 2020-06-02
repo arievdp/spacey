@@ -11,8 +11,11 @@ class RocketsController < ApplicationController
 
   def create
     @rocket = Rocket.new(rocket_params)
+    raise
+    @user = User.find(params[:user_id])
+    @rocket.user = @user
     if @rocket.save!
-      redirect_to rocket_path(@rockets)
+      redirect_to rocket_path(@rocket)
     else
       render :new
     end
@@ -36,7 +39,7 @@ class RocketsController < ApplicationController
   def destroy
     @rocket.destroy
 
-    redirect_to rocket_path
+    redirect_to rockets_path
   end
 
   private
@@ -45,7 +48,7 @@ class RocketsController < ApplicationController
     @rocket = Rocket.find(params[:id])
   end
 
-  def review_params
-    params.require(:rocket).permit(:name, :payload, :price, :description, :loaction)
+  def rocket_params
+    params.require(:rocket).permit(:name, :payload, :price, :description, :location)
   end
 end

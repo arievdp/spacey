@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :orders
+  has_many :reviews, through: :orders
   has_many :rockets
   validates :first_name, :last_name, :phone_number, presence: true
   validates :first_name, uniqueness: { scope: :last_name }
