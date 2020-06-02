@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :orders, only: :create
   end
 
+  resources :orders, only: :new
+
   resources :users, except: :index do
     resources :orders, only: [:index, :show, :edit, :update, :destroy] do
       resources :reviews, only: [:create, :edit, :update, :destroy]
