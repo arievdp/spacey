@@ -23,16 +23,3 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
-.jumbotron {
-  background-image: url(https://cdn.mos.cms.futurecdn.net/RjAhKZLKcFw5K9Tp83qy9c.jpg);
-  background-size:     cover;                      /* <------ */
-  background-repeat:   no-repeat;
-  background-position: center center;              /* optional, center the image */
-  height: 100vh;
-  h1 {
-    color: white;
-  }
-  p {
-    color: white;
-  }
-}

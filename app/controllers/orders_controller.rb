@@ -25,9 +25,13 @@ before_action :find_order, only: [:show, :edit, :update, :destroy]
     end
   end
 
-  def show; end
+  def show
+    @review = Review.new
+  end
 
-  def edit; end
+  def edit
+    @review = Review.new
+  end
 
   def update
     @order.update(order_params)

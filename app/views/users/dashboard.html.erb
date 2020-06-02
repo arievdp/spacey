@@ -20,7 +20,7 @@
             <td><%= order.start_date %></td>
             <td><%= order.end_date %></td>
             <td><%= order.status %></td>
-            <td><%= link_to 'Delete', new_rocket_path(@rocket)%></td>
+            <td><%= link_to 'View', order_path(order)%></td>
           </tr>
         <% end %>
       </table>

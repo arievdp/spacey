@@ -1,15 +1,15 @@
 class ReviewsController < ApplicationController
   def new
-    @rocket = Rocket.find(params[:rocket_id])
     @review = Review.new
   end
 
   def create
-    @rocket = Rocket.find(params[:rocket_id])
     @review = Review.new(review_params)
-    @review.rocket = @rocket
+    order = Order.find(params[:order_id])
+    rocket = Rocket.find(order.rocket.id)
+    @review.order = order
     if @review.save
-      redirect_to rocket_path(@rocket)
+      redirect_to rocket_path(rocket)
     else
       render :new
     end

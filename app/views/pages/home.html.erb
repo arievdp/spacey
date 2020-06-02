@@ -1,12 +1,12 @@
-<div class="jumbotron">
-  <div class="overlay">
-    <div class="inner">
+<div class="jumbotron text-center" >
+    <div class="inner m-5">
       <h1 class="display-4">SPACE-Y</h1>
       <p class="lead">Peer to peer rocket rental for <em>your</em> day-to-day space exploration</p>
-      <hr class="my-4">
+
       <p>Find the perfect rocket for your next mission</p>
-      <a class="btn btn-primary btn-lg" href="/rockets" role="button">Explore All</a>
-      <a class="btn btn-primary btn-lg" href="/users/dashboard" role="button">My Dashboard</a>
+      <%= link_to 'Explore', rockets_path, :class => "btn btn-outline-light btn-lg m-3" %>
+      <%= link_to 'Signup', new_user_registration_path, :class => "btn btn-outline-light btn-lg m-3" %>
+  <!--     <a class="btn btn-primary btn-lg" href="/rockets" role="button">Explore All</a>
+      <a class="btn btn-primary btn-lg" href="/users/dashboard" role="button">Signup</a> -->
     </div>
-</div>
 </div>
