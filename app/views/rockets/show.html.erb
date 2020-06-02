@@ -17,10 +17,12 @@
       <br>
       Location: <%= @rocket.location %>
     </p>
-
-
-      <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
-      <%= link_to 'Back', rockets_path%>
+        <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
+        <%= link_to 'Back', rockets_path%> |
+        <%= link_to "Delete #{@rocket.name}",
+            rocket_path(@rocket),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
     </div>
     <div class="col-5">
       <h2>Book now!</h2>
