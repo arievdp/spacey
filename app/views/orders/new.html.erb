@@ -1,1 +1,8 @@
-new.html.erb
+<div class="container">
+
+  <h1>New Rocket</h1>
+
+  <%= render 'form', order: @order %>
+
+  <%= link_to 'Back', rockets_path %>
+</div>

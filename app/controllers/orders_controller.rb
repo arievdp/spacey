@@ -11,6 +11,7 @@ before_action :find_order, only: [:show, :edit, :update, :destroy]
 
   def create
     @order = Order.new(order_params)
+    raise
     total_price = price_calculator(order.start_date, order.end_date, @order)
     order.total_price = total_price
     if @order.save!
