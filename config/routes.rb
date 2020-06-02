@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   end
 
   resources :users, except: :index do
+    collection do
+      get :dashboard
+    end
     resources :orders, only: [:index, :show, :edit, :update, :destroy] do
       resources :reviews, only: [:create, :edit, :update, :destroy]
     end
