@@ -1,5 +1,6 @@
 class RocketsController < ApplicationController
   before_action :find_rocket, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @rockets = Rocket.all
