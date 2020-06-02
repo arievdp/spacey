@@ -19,7 +19,8 @@ class RocketsController < ApplicationController
   end
 
   def show
-    
+    @review = Review.new
+    @order = Order.new
   end
 
   def edit; end
