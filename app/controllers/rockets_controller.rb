@@ -18,10 +18,7 @@ class RocketsController < ApplicationController
     end
   end
 
-  def show
-    @review = Review.new
-    @order = Order.new
-  end
+  def show; end
 
   def edit; end
 
@@ -44,7 +41,7 @@ class RocketsController < ApplicationController
     @rocket = Rocket.find(params[:id])
   end
 
-  def rocket_params
-    params.require(:rocket).permit(:name, :payload, :price, :description, :location)
+  def review_params
+    params.require(:rocket).permit(:name, :payload, :price, :description, :loaction)
   end
 end
