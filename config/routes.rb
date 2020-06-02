@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :orders, only: :create
   end
 
+  resources :orders, only: :new
+
   resources :users, except: :index do
     collection do
       get :dashboard
