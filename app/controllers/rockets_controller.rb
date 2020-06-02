@@ -41,7 +41,7 @@ class RocketsController < ApplicationController
     @rocket = Rocket.find(params[:id])
   end
 
-  def rocket_params
-    params.require(:rocket).permit(:name, :payload, :price, :description, :location)
+  def review_params
+    params.require(:rocket).permit(:name, :payload, :price, :description, :loaction)
   end
 end
