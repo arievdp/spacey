@@ -11,14 +11,20 @@ class RocketsController < ApplicationController
 
   def create
     @rocket = Rocket.new(rocket_params)
+    @user = current_user
+    @rocket.user = @user
     if @rocket.save!
-      redirect_to rocket_path(@rockets)
+      redirect_to rocket_path(@rocket)
     else
       render :new
     end
   end
 
-  def show; end
+  def show
+    @review = Review.new
+    @order = Order.new
+    @user = User.new
+  end
 
   def edit; end
 
@@ -32,7 +38,7 @@ class RocketsController < ApplicationController
   def destroy
     @rocket.destroy
 
-    redirect_to rocket_path
+    redirect_to rockets_path
   end
 
   private

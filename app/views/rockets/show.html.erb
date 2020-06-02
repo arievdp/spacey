@@ -5,8 +5,7 @@
   </p>
 
   <p>
-    <strong>Details:</strong><br>
-    <%= image_tag(@rocket.rocket_images, :alt => "rocket image") %>
+    <strong>Details:</strong>
     <br>
     Payload: <%= @rocket.payload %>
     <br>
@@ -19,6 +18,10 @@
 
 
   <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
-  <%= link_to 'Back', rockets_path%>
+  <%= link_to 'Back', rockets_path%> |
+  <%= link_to "Delete #{@rocket.name}",
+            rocket_path(@rocket),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
 </div>
 
