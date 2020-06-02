@@ -16,9 +16,9 @@
     <p>
       <strong>Details:</strong>
       <br>
-      Payload: <%= @rocket.payload %>
+      Payload: <%= @rocket.payload %> kilograms
       <br>
-      Price: $<%= @rocket.price %>
+      Price: $<%= @rocket.price %> / day
       <br>
       Description: <%= @rocket.description %>
       <br>
@@ -44,20 +44,16 @@
     <div class="col-7 border-top">
       <div class="mt-3">
         <h2>Reviews</h2>
-        <table class="table table-striped mt-3">
-        <tr>
-          <th>Review</th>
-          <th>Rating</th>
-        </tr>
         <% @rocket.orders.each do |order|%>
           <% order.reviews.each do |review| %>
-          <tr>
-            <td><%= review.content %></td>
-            <td><%= review.rating %></td>
-          </tr>
+            <%= render 'shared/notifications', review: review %>
+          <% end %>
         <% end %>
-        <% end %>
-      </table>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="mt-3">
+        <img class ="rocket-location img-fluid" src="https://www.dropbox.com/s/d3h7d8642ddf07o/Rocket-Location.jpg?raw=1">
       </div>
     </div>
   </div>

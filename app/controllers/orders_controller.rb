@@ -1,14 +1,6 @@
 class OrdersController < ApplicationController
 before_action :find_order, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @orders = Order.all
-  end
-
-  def new
-    @order = Order.new
-    @user = current_user
-  end
 
   def create
     @order = Order.new(order_params)
@@ -52,10 +44,6 @@ before_action :find_order, only: [:show, :edit, :update, :destroy]
   def find_order
     @order = Order.find(params[:id])
   end
-
-  # Need a method to check if a rocket is booked ??
-  # def is_rocket_available?
-  # end
 
   def order_params
     params.require(:order).permit(:rocket_id, :user_id, :start_date, :end_date, :status)
