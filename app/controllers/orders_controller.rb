@@ -7,10 +7,15 @@ before_action :find_order, only: [:show, :edit, :update, :destroy]
 
   def new
     @order = Order.new
+    @user = current_user
   end
 
   def create
     @order = Order.new(order_params)
+    @rocket = Rocket.find(params[:rocket_id])
+    @user = current_user
+    @order.rocket = @rocket
+    @order.user = @user
     total_price = price_calculator(@order)
     @order.total_price = total_price
     if @order.save

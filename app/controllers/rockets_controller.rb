@@ -7,6 +7,7 @@ class RocketsController < ApplicationController
 
   def new
     @rocket = Rocket.new
+    @order = Order.new
   end
 
   def create

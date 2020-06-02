@@ -5,16 +5,17 @@ Rails.application.routes.draw do
     resources :orders, only: :create
   end
 
-  resources :orders, only: [:new, :create]
+  # resources :orders, only: [:new, :create]
 
-  resources :users, except: :index do
-    resources :rocket, only: [:new, :create, :edit, :update, :destroy]
+  resources :users, only: :show do
+    # resources :rocket, only: [:new, :create] - delete
+    # Below is not a collection
     collection do
       get :dashboard
     end
-    resources :orders, only: [:index, :show, :edit, :update, :destroy] do
-      resources :reviews, only: [:create, :edit, :update, :destroy]
-    end
+    # resources :orders, only: [:index, :show, :edit, :update, :destroy] do
+    #   resources :reviews, only: [:create, :edit, :update, :destroy]
+    # end
   end
 
 
