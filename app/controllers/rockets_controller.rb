@@ -12,7 +12,7 @@ class RocketsController < ApplicationController
   def create
     @rocket = Rocket.new(rocket_params)
     if @rocket.save!
-      redirect_to rocket_path(@rockets)
+      redirect_to rocket_path(@rocket)
     else
       render :new
     end
@@ -32,7 +32,7 @@ class RocketsController < ApplicationController
   def destroy
     @rocket.destroy
 
-    redirect_to rocket_path
+    redirect_to rockets_path
   end
 
   private
