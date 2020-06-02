@@ -1,27 +1,34 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
-    <strong>Rocket:</strong>
-    <%= @rocket.name %>
-  </p>
+  <div class="row">
+    <div class="col-7"
+      <p id="notice"><%= notice %></p>
+      <strong>Rocket:</strong>
+      <%= @rocket.name %>
+    </p>
 
-  <p>
-    <strong>Details:</strong>
-    <br>
-    Payload: <%= @rocket.payload %>
-    <br>
-    Price: $<%= @rocket.price %>
-    <br>
-    Description: <%= @rocket.description %>
-    <br>
-    Location: <%= @rocket.location %>
-  </p>
-
-
-  <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
-  <%= link_to 'Back', rockets_path%> |
-  <%= link_to "Delete #{@rocket.name}",
+    <p>
+      <strong>Details:</strong>
+      <br>
+      Payload: <%= @rocket.payload %>
+      <br>
+      Price: $<%= @rocket.price %>
+      <br>
+      Description: <%= @rocket.description %>
+      <br>
+      Location: <%= @rocket.location %>
+    </p>
+        <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
+        <%= link_to 'Back', rockets_path%> |
+        <%= link_to "Delete #{@rocket.name}",
             rocket_path(@rocket),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+    </div>
+    <div class="col-5">
+      <h2>Book now!</h2>
+      <%= render 'order_form', rocket: @rocket, order: @order %>
+    </div>
+  </div>
 </div>
+
 
