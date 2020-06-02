@@ -11,8 +11,7 @@ class RocketsController < ApplicationController
 
   def create
     @rocket = Rocket.new(rocket_params)
-    raise
-    @user = User.find(params[:user_id])
+    @user = current_user
     @rocket.user = @user
     if @rocket.save!
       redirect_to rocket_path(@rocket)
