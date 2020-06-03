@@ -50,10 +50,6 @@ class RocketsController < ApplicationController
   end
 
   def rocket_params
-<<<<<<< HEAD
     params.require(:rocket).permit(:name, :payload, :price, :description, :location, rocket_images: [])
-=======
-    params.require(:rocket).permit(:name, :payload, :price, :description, :location, :photo)
->>>>>>> master
   end
 end
