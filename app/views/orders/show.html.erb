@@ -24,23 +24,18 @@
       <br>
       Location: <%= @order.rocket.location %>
     </p>
+    <%= link_to 'Edit ', edit_rocket_order_path(@order.rocket, @order) %> |
+    <%= button_to "Delete this booking",
+            rocket_order_path(@order.rocket, @order),
+            method: :delete,
+            class: 'btn btn-secondary btn-small',
+            data: { confirm: "Are you sure?" } %>
 
     </div>
     <div class="col-5">
       <div class="show-card">
         <h2>Add a review!</h2>
         <%= render 'review-form', order: @order, review: @review %>
-      </div>
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-7 border-top">
-      <div class="mt-3">
-        <h2>Reviews</h2>
-        <table class="table table-striped mt-3">
-          <tr>
-          </tr>
-      </table>
       </div>
     </div>
   </div>

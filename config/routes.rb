@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/about/', to: 'pages#about'
 
   resources :rockets do
-    resources :orders, only: :create
+    resources :orders, only: [:create, :destroy, :edit, :update]
   end
 
   resources :orders, only: [:show] do
