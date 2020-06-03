@@ -1,6 +1,12 @@
 <div class="container mt-3">
-  <div class="img-container-rocket" style="background-image: url('<%= rails_blob_url(@rocket.rocket_images.first) %>'); background-position: center;">
-  </div>
+  <% if @rocket.rocket_images.first.nil? %>
+    <div class="img-container-rocket" style="background-image: url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); background-position: center;">
+    </div>
+    <% else %>
+    <div class="img-container-rocket" style="background-image: url('<%= rails_blob_url(@rocket.rocket_images.first) %>'); background-position: center; ">
+
+    </div>
+  <% end %>
   <div class="row">
     <div class="col-7">
       <p id="notice"><%= notice %></p>
