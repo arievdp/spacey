@@ -21,7 +21,6 @@ arraynum = 0
     price: Faker::Number.decimal(l_digits: 2),
     description: Faker::Movies::StarWars.quote,
     location: Faker::Address.street_address,
-
     )
   new_rocket.user = new_user
   new_rocket.save!

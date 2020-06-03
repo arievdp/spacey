@@ -4,6 +4,13 @@ class RocketsController < ApplicationController
 
   def index
     @rockets = Rocket.all
+    @rockets = Rocket.geocoded
+    @markers = @rockets.map do | rocket |
+    {
+      lat: rocket.latitude,
+      lng: rocket.longitude
+    }
+    end
   end
 
   def new
