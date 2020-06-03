@@ -1,7 +1,7 @@
 class Rocket < ApplicationRecord
   has_many_attached :rocket_images
   belongs_to :user
-  has_many :orders
+  has_many :orders, dependent: :destroy
   has_many :reviews, through: :orders
   validates :name, :payload, :price, :description, :location, presence: true
   validates :name, uniqueness: true
