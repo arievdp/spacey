@@ -1,8 +1,18 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
-    <strong>Rocket:</strong>
-    <%= @rocket.name %>
-  </p>
+<div class="container mt-3">
+  <div class="text-center img-container-rocket">
+    <h2>TO:DO PLACE IMAGES HERE</h2>
+    <%= cl_image_tag @rocket.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div class="row">
+    <div class="col-7">
+      <p id="notice"><%= notice %></p>
+      <div class="rocket-title">
+        <h2>
+          <strong>Rocket:</strong>
+          <%= @rocket.name %>
+        </h2>
+      </div>
+    </p>
 
   <p>
     <strong>Details:</strong>
@@ -17,8 +27,38 @@
     Location: <%= @rocket.location %>
   </p>
 
+        <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
+        <%= link_to 'Back', rockets_path%> |
+        <%= link_to "Delete #{@rocket.name}",
+            rocket_path(@rocket),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
 
-  <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
-  <%= link_to 'Back', rockets_path%>
+    </div>
+    <div class="col-5">
+      <div class="show-card">
+        <h2>Book now!</h2>
+        <%= render 'order_form', rocket: @rocket, order: @order %>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-7 border-top">
+      <div class="mt-3">
+        <h2>Reviews</h2>
+        <% @rocket.orders.each do |order|%>
+          <% order.reviews.each do |review| %>
+            <%= render 'shared/notifications', review: review %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="mt-3">
+        <img class ="rocket-location img-fluid" src="https://www.dropbox.com/s/d3h7d8642ddf07o/Rocket-Location.jpg?raw=1">
+      </div>
+    </div>
+  </div>
 </div>
+
 

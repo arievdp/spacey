@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+
   resource :dashboard, only: [:show]
+
+  get '/about/', to: 'pages#about'
+
   resources :rockets do
     resources :orders, only: :create
   end
 
-  resources :orders, only: [:new, :create]
-
-  resources :users, except: :index do
-    resources :rocket, only: [:new, :create, :edit, :update, :destroy]
-    resources :orders, only: [:index, :show, :edit, :update, :destroy] do
-      resources :reviews, only: [:create, :edit, :update, :destroy]
-    end
+  resources :orders, only: [:show] do
+    resources :reviews, only: [:new, :create]
   end
 
+  resources :users, only: :show do
+    resources :orders, only: :show
 
+  end
 end

@@ -1,1 +1,24 @@
-// Specific CSS for your home-page
+.jumbotron {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url(https://cdn.mos.cms.futurecdn.net/RjAhKZLKcFw5K9Tp83qy9c.jpg);
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;              /* optional, center the image */
+  height: 100vh;
+  margin: 0;
+  h1 {
+    color: white;
+  }
+  p {
+    color: white;
+  }
+}
+
+.jumbotron-fluid {
+    text-shadow: #444 0 1px 1px;
+    color: #FFF;
+    position: relative;
+    height: 40vh;
+
+    display: flex;
+    align-items: center;
+}

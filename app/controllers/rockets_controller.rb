@@ -1,5 +1,6 @@
 class RocketsController < ApplicationController
   before_action :find_rocket, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @rockets = Rocket.all
@@ -7,6 +8,7 @@ class RocketsController < ApplicationController
 
   def new
     @rocket = Rocket.new
+    @order = Order.new
   end
 
   def create
@@ -48,6 +50,10 @@ class RocketsController < ApplicationController
   end
 
   def rocket_params
+<<<<<<< HEAD
     params.require(:rocket).permit(:name, :payload, :price, :description, :location, rocket_images: [])
+=======
+    params.require(:rocket).permit(:name, :payload, :price, :description, :location, :photo)
+>>>>>>> master
   end
 end

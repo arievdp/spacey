@@ -1,0 +1,10 @@
+<div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/random' class="avatar-large" />
+  <div class="notification-content">
+    <p><small><%= review.order.user.first_name %> <%= review.order.user.last_name %></small></p>
+    <% review.rating.to_i.times do  %>
+      <i class="fas fa-star"></i>
+    <% end %>
+    <p><%= review.content %></p>
+  </div>
+</div>
