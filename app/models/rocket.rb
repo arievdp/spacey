@@ -1,5 +1,5 @@
 class Rocket < ApplicationRecord
-  has_one_attached :photo
+  has_many_attached :rocket_images
   belongs_to :user
   has_many :orders
   has_many :reviews, through: :orders
@@ -16,5 +16,4 @@ class Rocket < ApplicationRecord
     # check whether date is included between start and end date (range)
     # receive one date
   end
-
 end
