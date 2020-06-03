@@ -1,11 +1,11 @@
 
-  <%= simple_form_for [rocket, order] do |f| %>
+  <%= simple_form_for [order, review] do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.input :start_date, as: :date, html5: true, input_html: {min: Date.today} %>
-      <%= f.input :end_date, as: :date, html5: true, input_html: {min: Date.today} %>
+      <%= f.input :content %>
+      <%= f.input :rating, wrapper_html: { class: 'fas fa-star' }, collection: 1..5 %>
     </div>
 
     <div class="form-actions">

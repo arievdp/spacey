@@ -1,7 +1,0 @@
-<h1>This is index page for orders</h1>
-
-<ul>
-<% @orders.each do |order| %>
-  <li><%= link_to order.name, order_path(order) %></li>
-<% end %>
-</ul>

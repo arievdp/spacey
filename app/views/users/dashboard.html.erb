@@ -13,16 +13,18 @@
           <th>Start Date</th>
           <th>End Date</th>
           <th>Status</th>
-          <th>Withdraw</th>
+          <th></th>
+        </tr>
+    
         <% @user.orders.each do |order|%>
-          <tr>
-            <td><%= order.id%></td>
-            <td><%= order.start_date %></td>
-            <td><%= order.end_date %></td>
-            <td><%= order.status %></td>
-            <td><%= link_to 'Delete', new_rocket_path(@rocket)%></td>
-          </tr>
-        <% end %>
+        <tr>
+          <td><%= order.id%></td>
+          <td><%= order.start_date %></td>
+          <td><%= order.end_date %></td>
+          <td><%= order.status %></td>
+          <td><%= link_to 'Add Rocket ', new_rocket_path(@rocket), class:'btn btn-primary'%></td>
+          <% end %>
+        </tr>
       </table>
     </div>
 
@@ -36,11 +38,13 @@
         <tr>
           <th>Rocket name</th>
           <th>Status</th>
+        </tr>
         <% @user.rockets.each do |rocket|%>
-          <tr>
-            <td><%= rocket.name%></td>
-          </tr>
-        <% end %>
+        <tr>
+          <td><%= rocket.name%></td>
+          <%# <td><%= user.order.status%></td>
+          <% end %>
+        </tr>
       </table>
       
     </div>

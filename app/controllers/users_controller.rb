@@ -6,5 +6,5 @@ class UsersController < ApplicationController
   def show
     @rocket = Rocket.new
   end
-    
+
 end
