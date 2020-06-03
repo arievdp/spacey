@@ -9,7 +9,9 @@
     <% @rockets.each do |rocket| %>
       <div class="show-card mx-auto" style="width: 18rem;">
         <div class="card-img-top " alt="rocket card">
-          <img src="<%= rocket.rocket_images %>" class="card-img-top" alt="rocket img">
+          <a href="<%= rocket_path(rocket)%>">
+            <img src="<%= rocket.rocket_images %>" class="card-img-top" alt="rocket img">
+          </a>
           <div class="card-body">
             <h5 class="card-title"><%= link_to rocket.name, rocket_path(rocket) %></h5>
             <p class="card-text">Payload: <%= rocket.payload %>KG</p>
