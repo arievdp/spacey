@@ -1,4 +1,4 @@
-<div class="container show-container">
+<div class="container show-container justify-content-between">
   <div class="row d-flex">
     <div class="col-sm-12 col-md-8">
       <h1>User Dashboard</h1>
@@ -29,6 +29,7 @@
     <div class="col-sm-12 col-md-4 d-flex flex-column">
       <div class="rocket-dash-container d-flex ">
         <h3>Rockets</h3>
+        <%= link_to 'Add Rocket ', new_rocket_path(@rocket), class:'btn btn-primary ml-auto'%>
       </div>
 
       <table class="table table-striped">
@@ -41,7 +42,7 @@
           </tr>
         <% end %>
       </table>
-      <%= link_to 'Add Rocket ', new_rocket_path(@rocket), class:'btn btn-primary mt-auto'%>
+      
     </div>
   </div>
 </div>
