@@ -28,7 +28,7 @@ arraynum = 0
   new_order = Order.new(
     start_date: Faker::Date.between(from: 5.days.ago, to: Date.today),
     end_date: Faker::Date.forward(days: 23),
-    status: ["Booked", "Available", "Cancelled"].sample,
+    status: ["Booked", "Pending", "Cancelled"].sample,
     total_price: Faker::Number.decimal(l_digits: 2)
     )
   new_order.user = new_user
