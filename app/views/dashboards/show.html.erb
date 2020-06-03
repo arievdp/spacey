@@ -12,13 +12,15 @@
           <th>Order #</th>
           <th>Start Date</th>
           <th>End Date</th>
+          <th>Total Price</th>
           <th>Status</th>
           <th>Withdraw</th>
         <% @user.orders.each do |order|%>
           <tr>
-            <td><%= order.id%></td>
+            <td><%= order.id %></td>
             <td><%= order.start_date %></td>
             <td><%= order.end_date %></td>
+            <td><%= order.total_price %></td>
             <td><%= order.status %></td>
             <td><%= link_to 'View', order_path(order)%></td>
           </tr>
@@ -26,7 +28,7 @@
       </table>
     </div>
 
-    <div class="col-sm-12 col-md-4 d-flex flex-column">
+    <div class="col-sm-12 col-md-4">
       <div class="rocket-dash-container d-flex ">
         <h3>Rockets</h3>
       </div>
