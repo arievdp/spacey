@@ -1,7 +1,9 @@
 <div class="container mt-3">
   <div class="text-center img-container-rocket">
     <h2>TO:DO PLACE IMAGES HERE</h2>
-    <%= cl_image_tag @rocket.photo.key, height: 300, width: 400, crop: :fill %>
+    <% @rocket.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
   </div>
   <div class="row">
     <div class="col-7">

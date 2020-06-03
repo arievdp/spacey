@@ -1,5 +1,5 @@
 class Rocket < ApplicationRecord
-  has_one_attached :photo
+  has_many_attached :photos
   belongs_to :user
   has_many :orders
   has_many :reviews, through: :orders
