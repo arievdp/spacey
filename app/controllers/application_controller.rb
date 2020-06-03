@@ -11,10 +11,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone_number, :avatar])
   end
 
-  # protected
+  protected
 
-  # def after_sign_in_path_for(resource)
-  #   # return the path based on resource
-  #   redirect_to dashboard_path
-  # end
+  def after_sign_in_path_for(resource)
+    # return the path based on resource
+    '/dashboard'
+  end
 end
