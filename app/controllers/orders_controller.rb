@@ -13,7 +13,7 @@ before_action :find_order, only: [:show, :edit, :update, :destroy]
     if @order.save
       redirect_to dashboard_path
     else
-      render :new
+      render 'rockets/show'
     end
   end
 
