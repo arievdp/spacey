@@ -9,12 +9,9 @@ Rails.application.routes.draw do
   resources :orders, only: [:show] do
     resources :reviews, only: [:new, :create]
   end
-
+  resource :dashboard, only: [:show]
   resources :users, only: :show do
     resources :orders, only: :show
-    collection do
-      get :dashboard
-    end
   end
 
 end
