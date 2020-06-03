@@ -9,8 +9,13 @@
     <% @rockets.each do |rocket| %>
       <div class="show-card mx-auto" style="width: 18rem;">
         <div class="card-img-top " alt="rocket card">
-          <a href="<%= rocket_path(rocket)%>">
-            <img src="<%= rocket.rocket_images %>" class="card-img-top" alt="rocket img">
+            <% if rocket.rocket_images.first.nil? %>
+              <div class="img-container-rocket" style="background-image: url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); height: 200px; background-position: center;">
+              </div>
+            <% else %>
+              <div class="img-container-rocket" style="background-image: url('<%= rails_blob_url(rocket.rocket_images.first) %>'); height: 200px; background-position: center; ">
+              </div>
+            <% end %>
           </a>
           <div class="card-body">
             <h5 class="card-title"><%= link_to rocket.name, rocket_path(rocket) %></h5>
