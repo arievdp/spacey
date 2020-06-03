@@ -22,12 +22,14 @@
           <th>Order #</th>
           <th>Start Date</th>
           <th>End Date</th>
+          <th>Total Price</th>
           <th>Withdraw</th>
         <% @user.orders.each do |order|%>
           <tr>
-            <td><%= order.id%></td>
+            <td><%= order.id %></td>
             <td><%= order.start_date %></td>
             <td><%= order.end_date %></td>
+            <td><%= order.total_price %></td>
             <td><%= link_to 'View', order_path(order)%></td>
           </tr>
         <% end %>

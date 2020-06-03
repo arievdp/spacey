@@ -11,7 +11,7 @@ before_action :find_order, only: [:show, :edit, :update, :destroy]
     total_price = price_calculator(@order)
     @order.total_price = total_price
     if @order.save
-      redirect_to dashboard_users_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -27,8 +27,10 @@ before_action :find_order, only: [:show, :edit, :update, :destroy]
 
   def update
     @order.update(order_params)
+    total_price = price_calculator(@order)
+    @order.total_price = total_price
     if @order.save!
-      redirect_to dashboard_users_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -36,7 +38,7 @@ before_action :find_order, only: [:show, :edit, :update, :destroy]
 
   def destroy
     @order.destroy
-    redirect_to dashboard_users_path
+    redirect_to dashboard_path
   end
 
   private
