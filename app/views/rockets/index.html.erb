@@ -29,9 +29,11 @@
           </a>
           <div class="card-body">
             <h5 class="card-title"><%= link_to rocket.name, rocket_path(rocket) %></h5>
-            <p class="card-text">Payload: <%= rocket.payload %>KG</p>
-            <p class="card-text">Location: <%= rocket.location %></p>
-            <p class="card-text">Price: $<%= rocket.price %>/day</p>
+            <div class="cards-container">
+              <p class="card-text">Payload: <%= rocket.payload %>KG</p>
+              <p class="card-text">Location: <%= rocket.location %></p>
+              <p class="card-text">Price: $<%= rocket.price %>/day</p>
+            </div>
             <%= link_to 'Learn more', rocket_path(rocket), :class => "btn btn-primary" %>
           </div>
         </div>
