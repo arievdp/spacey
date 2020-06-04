@@ -35,7 +35,7 @@ class RocketsController < ApplicationController
     @markers = {
       lat: @rocket.latitude,
       lng: @rocket.longitude,
-      image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      image_url: helpers.asset_url('https://img.icons8.com/plasticine/100/000000/rocket.png')
     }
   end
 
