@@ -5,7 +5,9 @@ class Rocket < ApplicationRecord
   has_many :reviews, through: :orders
   validates :name, :payload, :price, :description, :location, presence: true
   validates :name, uniqueness: true
-  validates :price, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { greater_than: 0, less_than: 1000000 }
+  validates :price, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { greater_than: 0, less_than: 1_000_000 }
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 
   def owner
     # checks who the owner is

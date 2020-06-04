@@ -31,6 +31,11 @@ class RocketsController < ApplicationController
     @review = Review.new
     @order = Order.new
     @user = User.new
+    # @rocket = Rocket.geocoded
+    @markers = {
+      lat: @rocket.latitude,
+      lng: @rocket.longitude
+    }
   end
 
   def edit; end

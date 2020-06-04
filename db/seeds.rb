@@ -2,7 +2,7 @@ require 'faker'
 
 login_emails = ["rithvik@spacey.com", "lacy@spacey.com", "jason@spacey.com", "arie@spacey.com"]
 password = "123456"
-
+cities = ["Melbourne", "Sydney", "Kazakhstan", "Auckland"]
 puts 'Creating 4 fake users, rockets, orders and reviews'
 arraynum = 0
 4.times do
@@ -20,8 +20,7 @@ arraynum = 0
     payload: Faker::Number.number(digits: 3),
     price: Faker::Number.decimal(l_digits: 2),
     description: Faker::Movies::StarWars.quote,
-    location: Faker::Address.street_address,
-
+    location: cities[arraynum],
     )
   new_rocket.user = new_user
   new_rocket.save!
