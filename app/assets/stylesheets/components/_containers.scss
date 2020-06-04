@@ -1,5 +1,5 @@
 .container {
-  padding-top: 20px;
+  //padding-top: 20px;
 }
 
 .cards-container {
@@ -10,4 +10,22 @@
 
 .nav-container {
   padding-top: 0px;
+}
+
+.body-container {
+  padding-bottom: 60px;
+}
+
+.avatar-container {
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.img-center-container {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 50%;
 }
