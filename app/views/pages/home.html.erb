@@ -1,4 +1,46 @@
 <div class="jumbotron vertical-center " >
+<div class="navbar spacer navbar-expand-sm">
+  <div class="nav-container container">
+  <%= link_to "/", class: "navbar-brand" do %>
+    <%= image_tag "https://www.dropbox.com/s/lt0umoouigpdgfe/Space-Y-Logo.png?raw=1" %>
+    <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Home", "/", class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "About", "/about", class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Dashboard", "/dashboard", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Rockets", rockets_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://www.dropbox.com/s/6uwz7n1iep1indv/elon_musk_royal_society.jpg?raw=1", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Add a new Rocket", new_rocket_path, class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</div>
     <div class="container">
       <h1 class="display-4">SPACE-Y</h1>
       <p class="lead">Peer to peer rocket rental for <em>your</em> day-to-day space exploration</p>
