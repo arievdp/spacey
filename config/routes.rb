@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: [:show]
 
   get '/about/', to: 'pages#about'
+  get '/launch/', to: 'pages#launch'
 
   resources :rockets do
     resources :orders, only: [:create, :destroy, :edit, :update]

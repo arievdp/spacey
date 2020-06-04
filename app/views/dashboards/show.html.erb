@@ -1,4 +1,4 @@
-<div class="container mt-3 show-container">
+<div class="container mt-3 show-container dp-01 dp-container">
   <div class="row">
     <div class="col-sm-12 col-md-8">
       <h1>User Dashboard</h1>
@@ -7,7 +7,7 @@
       <span><%= current_user.last_name %></span></h5><br>
       <p>Email: <%= current_user.email %></p>
       <p>Phone Number: <%= current_user.phone_number%></p>
-      <%= link_to 'Explore All Rockets ', rockets_path, class:'btn btn-primary mt-auto'%><br><br>
+      <%= link_to 'Explore All Rockets ', rockets_path, class:'btn btn-outline-light btn-lg mt-auto'%><br><br>
     </div>
 
     <div class="col-sm-12 col-md-4">
@@ -25,7 +25,7 @@
           <th>Start Date</th>
           <th>End Date</th>
           <th>Total Price</th>
-          <th>Withdraw</th>
+          <th>Edit</th>
         <% @user.orders.each do |order|%>
           <tr>
             <td><%= order.id %></td>
@@ -50,7 +50,7 @@
         </div>
       </div>
       <br>
-      <%= link_to 'Add Rocket ', new_rocket_path(@rocket), class:'btn btn-primary mt-auto'%>
+      <%= link_to 'Add Rocket ', new_rocket_path(@rocket), class:'btn btn-outline-light btn-lg mt-auto'%>
     </div>
   </div>
 </div>
