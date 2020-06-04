@@ -11,6 +11,14 @@ $dt-team-card-border-radius: $dp-border-radius;
 // Team card
 
 .dp-card-primary {
+  // background-color: $dt-team-card-bg;
+  border-radius: $dt-team-card-border-radius;
+  padding-top: 30px;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
+
   h3 {
   margin: 10px 0;
   }
@@ -24,13 +32,7 @@ $dt-team-card-border-radius: $dp-border-radius;
   font-size: 14px;
   line-height: 21px;
   }
-  // background-color: $dt-team-card-bg;
-  border-radius: $dt-team-card-border-radius;
-  padding-top: 30px;
-  position: relative;
-  width: 350px;
-  max-width: 100%;
-  text-align: center;
+
   .pro {
   color: $dt-team-card-bg;
   background-color: $dt-team-card-accent;
@@ -48,6 +50,7 @@ $dt-team-card-border-radius: $dp-border-radius;
   border-radius: 50%;
   padding: 7px;
   }
+
   button.primary {
   background-color: $dt-team-card-accent;
   border: 1px solid $dt-team-card-accent;
@@ -93,6 +96,14 @@ $dt-product-card-accent: $dp-black;
 $dt-product-card-border-radius: $dp-border-radius;
 
 .dp-card-product-primary {
+  background-color: $dt-product-card-bg;
+  border-radius: $dt-product-card-border-radius;
+  padding-top: 30px;
+  position: relative;
+  width: 21rem;
+  max-width: 100%;
+  text-align: center;
+
   h3 {
   text-transform: uppercase;
   margin: 20px 0 150px;
@@ -110,13 +121,7 @@ $dt-product-card-border-radius: $dp-border-radius;
   line-height: 21px;
   color: $dp-black;
   }
-  background-color: $dt-product-card-bg;
-  border-radius: $dt-product-card-border-radius;
-  padding-top: 30px;
-  position: relative;
-  width: 18rem;
-  max-width: 100%;
-  text-align: center;
+
   .pro {
   color: $dt-product-card-bg;
   background-color: $dt-product-card-accent;
@@ -134,6 +139,7 @@ $dt-product-card-border-radius: $dp-border-radius;
   border-radius: 50%;
   padding: 7px;
   }
+
   button.primary {
   background-color: $dt-product-card-accent;
   border: 1px solid $dt-product-card-accent;
