@@ -38,8 +38,6 @@ const initMapbox = () => {
 
 }
 
-
-
   // Pass the element as an argument to the new marker
 
 

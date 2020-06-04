@@ -1,5 +1,5 @@
 <div class="container show-container justify-content-between">
-  <div class="row d-flex">
+  <div class="row d-flex dp-02">
     <div class="col-sm-12 col-md-8">
       <h1>User Dashboard</h1>
 
@@ -15,7 +15,7 @@
           <th>Status</th>
           <th></th>
         </tr>
-    
+
         <% @user.orders.each do |order|%>
         <tr>
           <td><%= order.id%></td>
@@ -47,7 +47,7 @@
           <% end %>
         </tr>
       </table>
-      
+
     </div>
   </div>
 </div>

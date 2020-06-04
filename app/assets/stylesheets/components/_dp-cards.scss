@@ -94,14 +94,15 @@ $dt-product-card-border-radius: $dp-border-radius;
 
 .dp-card-product-primary {
   h3 {
-  margin: 20px 0 200px;
+  text-transform: uppercase;
+  margin: 20px 0 150px;
   color: $dp-black;
   }
 
   h6 {
-  margin: 20px 0;
   text-transform: uppercase;
   color: $dp-black;
+  margin: 0 7px 7px 0;
   }
 
   p {
@@ -113,7 +114,7 @@ $dt-product-card-border-radius: $dp-border-radius;
   border-radius: $dt-product-card-border-radius;
   padding-top: 30px;
   position: relative;
-  width: 350px;
+  width: 18rem;
   max-width: 100%;
   text-align: center;
   .pro {
@@ -151,12 +152,13 @@ $dt-product-card-border-radius: $dp-border-radius;
 .dp-card-product-secondary {
   background-color: $dt-product-card-bg-skills;
   border-radius: $dt-product-card-border-radius;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
+  width: 100%;
+  text-align: left;
+  padding: 30px 30px 30px 30px;
+  margin: 0px;
   ul {
   list-style-type: none;
-  margin: 0;
+  margin: 20px 0px 0px 0px;
   padding: 0;
   color: $dp-black;
   }
@@ -165,7 +167,7 @@ $dt-product-card-border-radius: $dp-border-radius;
   // border-radius: 2px;
   font-size: 14px;
   margin: 0 7px 7px 0;
-  padding: 7px;
+  // padding: 7px;
   color: $dp-black;
   }
 }

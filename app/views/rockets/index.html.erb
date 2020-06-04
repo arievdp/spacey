@@ -1,5 +1,5 @@
 <div class="container mt-3 ">
-  <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center">
+  <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center dp-24">
     <h1>Rockets available for hire</h1>
   </div>
 </div>
@@ -12,36 +12,36 @@
       placeholder: "Find a rocket"
       %>
     </div>
-    <div><%= submit_tag "Search", class: "btn btn-primary" %></div>
+    <div><%= submit_tag "Search", class: "btn btn-outline-light ml-2" %></div>
   <% end %>
   </div>
 </div>
 
 <div class="body-container container">
-  <div class="cards card-container">
+  <div class="cards card-container d-flex justify-content-between">
     <% @rockets.each do |rocket| %>
-      <div class="show-card mx-auto" style="width: 19rem;">
-        <div class="card-img-top " alt="rocket card">
-            <% if rocket.rocket_images.first.nil? %>
-              <div class="img-container-rocket" style="background-image: url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); height: 200px; background-position: center;">
-              </div>
-            <% else %>
-              <div class="img-container-rocket" style="background-image: url('<%= rails_blob_url(rocket.rocket_images.first) %>'); height: 200px; background-position: center; ">
-              </div>
-            <% end %>
-          </a>
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to rocket.name, rocket_path(rocket) %></h5>
-            <div class="cards-container">
-              <p class="card-text">Payload: <%= rocket.payload %>KG</p>
-              <p class="card-text">Location: <%= rocket.location %></p>
-              <p class="card-text">Price: $<%= rocket.price %>/day</p>
-            </div>
-            <%= link_to 'Learn more', rocket_path(rocket), :class => "btn btn-primary" %>
-          </div>
-        </div>
+    <% if rocket.rocket_images.first.nil? %>
+    <div class="dp-card-product-primary dp-08 mx-auto" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.9)), url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); background-position: center;">
+    <% else %>
+    <div class="dp-card-product-primary dp-08 mxauto" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.9)), url('<%= rails_blob_url(rocket.rocket_images.first) %>'); background-position: center; ">
+    <% end %>
+      <h3><%= rocket.name %></h3>
+    <div class="dp-card-product-secondary">
+    <h6>Details</h6>
+      <ul>
+        <li><i class="fas fa-dollar-sign mr-3"></i><%= rocket.price %> /day</li>
+        <li><i class="fas fa-thumbtack mr-3"></i>rocket.location</li>
+        <li><i class="fas fa-rocket mr-3"></i><%= rocket.payload %> KG</li>
+      </ul>
+      <div class = "d-flex justify-content-center mt-3">
+        <!-- <button class="primary ghost m-auto"> -->
+          <%= link_to 'BOOK NOW', rocket_path(rocket), class:"btn btn-outline-dark ml-2" %>
+      <!--   </button> -->
       </div>
-  <% end %>
+    </div>
   </div>
+<% end %>
+</div>
+
 </div>
 
