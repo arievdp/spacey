@@ -20,7 +20,7 @@ class RocketsController < ApplicationController
     @rocket = Rocket.new(rocket_params)
     @user = current_user
     @rocket.user = @user
-    if @rocket.save!
+    if @rocket.save
       redirect_to rocket_path(@rocket)
     else
       render :new
@@ -34,7 +34,8 @@ class RocketsController < ApplicationController
     # @rocket = Rocket.geocoded
     @markers = {
       lat: @rocket.latitude,
-      lng: @rocket.longitude
+      lng: @rocket.longitude,
+      image_url: helpers.asset_url('https://img.icons8.com/plasticine/100/000000/rocket.png')
     }
   end
 
