@@ -1,22 +1,25 @@
-<div class="container mt-3 show-container dp-01 dp-container">
+<div class="container mt-3 show-container dp-03 dp-container px-3">
   <div class="row">
     <div class="col-sm-12 col-md-8">
-      <h1>User Dashboard</h1>
-      <h5><strong>Welcome back! </strong>
-      <span><%= current_user.first_name %></span>
-      <span><%= current_user.last_name %></span></h5><br>
-      <p>Email: <%= current_user.email %></p>
-      <p>Phone Number: <%= current_user.phone_number%></p>
-      <%= link_to 'Explore All Rockets ', rockets_path, class:'btn btn-outline-light btn-lg mt-auto'%><br><br>
+      <div class="dashboard-heading mb-4">
+        <h1>User Dashboard</h1>
+      </div>
+      <div class="dashboard-user-welcome mb-4">
+        <h5><strong>Welcome back!</strong>
+        <span><%= current_user.first_name %></span>
+        <span><%= current_user.last_name %></span></h5>
+      </div>
+      <div class="dashboard-user-details mb-5">
+        <p><i class="far fa-envelope mr-3"></i><%= current_user.email %></p>
+        <p><i class="fas fa-phone mr-3"></i><%= current_user.phone_number%></p>
+      </div>
     </div>
-
     <div class="col-sm-12 col-md-4">
       <div class="avatar-container">
         <img src="https://source.unsplash.com/random/200x200" class="img-center-container" >
       </div>
     </div>
   </div>
-
   <div class="row d-flex">
     <div class="col-sm-12 col-md-8">
       <table class="table table-striped">
@@ -39,8 +42,8 @@
     </div>
 
     <div class="col-sm-12 col-md-4 d-flex flex-column">
-      <div class="rocket-dash-container">
-        <div class="list-group">
+      <div class="rocket-dash-container mb-3">
+        <div class="list-group dp-border-radius">
           <li class="list-group-item list-group-item-secondary">
             <strong>Manage Rockets</strong>
           </li>
@@ -49,9 +52,10 @@
           <% end %>
         </div>
       </div>
-      <br>
-      <%= link_to 'Add Rocket ', new_rocket_path(@rocket), class:'btn btn-outline-light btn-lg mt-auto'%>
+      <%= link_to 'Add a new Rocket ', new_rocket_path(@rocket), class:'btn btn-outline-light btn-lg mt-auto dp-border-radius mb-3'%>
+      <%= link_to 'Explore all Rockets ', rockets_path, class:'btn btn-outline-light btn-lg mt-auto dp-border-radius mb-3'%>
     </div>
+    <div class="row d-flex">
   </div>
 </div>
 
