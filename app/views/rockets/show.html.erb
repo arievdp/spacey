@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="body-container container mt-3">
   <% if @rocket.rocket_images.first.nil? %>
     <div class="img-container-rocket" style="background-image: url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); background-position: center;">
     </div>
@@ -23,19 +23,20 @@
     <br>
     Payload: <%= @rocket.payload %>
     <br>
-    Price: $<%= @rocket.price %>
+    Price: $<%= @rocket.price %> /day
     <br>
     Description: <%= @rocket.description %>
     <br>
     Location: <%= @rocket.location %>
   </p>
-
-        <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
-        <%= link_to 'Back', rockets_path%> |
-        <%= link_to "Delete #{@rocket.name}",
-            rocket_path(@rocket),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+    <% if current_user == @rocket.user %>
+      <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
+      <%= link_to 'Back', rockets_path%> |
+      <%= link_to "Delete #{@rocket.name}",
+          rocket_path(@rocket),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+    <% end %>
 
     </div>
     <div class="col-5">
