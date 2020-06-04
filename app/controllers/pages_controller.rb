@@ -10,4 +10,7 @@ class PagesController < ApplicationController
   def kitchensink
   end
 
+  def launch
+  end
+
 end

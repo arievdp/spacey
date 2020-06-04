@@ -1,0 +1,171 @@
+// profile card for team members, use with dark theme.
+// colours / setup
+
+$dt-team-card-bg: $dp-black;
+$dt-team-card-bg-skills: $dp-00;
+$dt-team-card-border-skills: $dp-em-med;
+$dt-team-card-pro: $dp-accent;
+$dt-team-card-accent: $dp-accent;
+$dt-team-card-border-radius: $dp-border-radius;
+
+// Team card
+
+.dp-card-primary {
+  h3 {
+  margin: 10px 0;
+  }
+
+  h6 {
+  margin: 5px 0;
+  text-transform: uppercase;
+  }
+
+  p {
+  font-size: 14px;
+  line-height: 21px;
+  }
+  // background-color: $dt-team-card-bg;
+  border-radius: $dt-team-card-border-radius;
+  padding-top: 30px;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
+  .pro {
+  color: $dt-team-card-bg;
+  background-color: $dt-team-card-accent;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 7px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  }
+  .round {
+  width: 150px;
+  border: 1px solid $dt-team-card-accent;
+  border-radius: 50%;
+  padding: 7px;
+  }
+  button.primary {
+  background-color: $dt-team-card-accent;
+  border: 1px solid $dt-team-card-accent;
+  border-radius: 3px;
+  color: $dt-team-card-bg;
+  font-weight: 500;
+  padding: 10px 25px;
+  }
+  button.primary.ghost {
+  background-color: transparent;
+  color: $dt-team-card-accent;;
+  }
+}
+
+.dp-card-secondary {
+  background-color: $dt-team-card-bg-skills;
+  border-radius: $dt-team-card-border-radius;
+  text-align: left;
+  padding: 15px;
+  margin-top: 30px;
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  }
+  li {
+  border: 1px solid $dt-team-card-border-skills;
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0 7px 7px 0;
+  padding: 7px;
+  }
+}
+
+// Product card
+
+$dt-product-card-bg: $dp-em-hi;
+$dt-product-card-bg-skills: $dp-em-med;
+$dt-product-card-border-skills: $dp-24;
+$dt-product-card-pro: $dp-black;
+$dt-product-card-accent: $dp-black;
+$dt-product-card-border-radius: $dp-border-radius;
+
+.dp-card-product-primary {
+  h3 {
+  margin: 20px 0 200px;
+  color: $dp-black;
+  }
+
+  h6 {
+  margin: 20px 0;
+  text-transform: uppercase;
+  color: $dp-black;
+  }
+
+  p {
+  font-size: 14px;
+  line-height: 21px;
+  color: $dp-black;
+  }
+  background-color: $dt-product-card-bg;
+  border-radius: $dt-product-card-border-radius;
+  padding-top: 30px;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
+  .pro {
+  color: $dt-product-card-bg;
+  background-color: $dt-product-card-accent;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 7px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  }
+  .round {
+  width: 150px;
+  border: 1px solid $dt-product-card-accent;
+  border-radius: 50%;
+  padding: 7px;
+  }
+  button.primary {
+  background-color: $dt-product-card-accent;
+  border: 1px solid $dt-product-card-accent;
+  border-radius: 3px;
+  color: $dt-product-card-bg;
+  font-weight: 500;
+  padding: 10px 25px;
+  }
+  button.primary.ghost {
+  background-color: transparent;
+  color: $dt-product-card-accent;;
+  }
+
+}
+
+.dp-card-product-secondary {
+  background-color: $dt-product-card-bg-skills;
+  border-radius: $dt-product-card-border-radius;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: $dp-black;
+  }
+  li {
+  // border: 1px solid $dt-product-card-border-skills;
+  // border-radius: 2px;
+  font-size: 14px;
+  margin: 0 7px 7px 0;
+  padding: 7px;
+  color: $dp-black;
+  }
+}

@@ -1,0 +1,114 @@
+<div id='app'>
+  <rocket></rocket>
+</div>
+
+<template id='rocket'>
+  <div class="rocket-wrap" :class="{'fly': flying}">
+    <div class="galaxy">
+      <div v-for="(field, key) in space" :class="key" class="field">
+        <div v-for="(distanceLayer, key) in field" class="distance-layer" :class="key">
+          <div v-for="star in distanceLayer" class="star" :style="'top:'+star.top+'px;left:'+star.left+'px;'"></div>
+        </div>
+      </div>
+      <div class="moon">
+       <div class="crater"></div>
+       <div class="crater-2"></div>
+       <div class="crater-3"></div>
+      </div>
+      <div class="earth"></div>
+      <div class="mars"></div>
+    </div>
+    <div v-if="counting" class="countdown">
+      <span class="count">{{ countdown }}</span>
+    </div>
+    <div class="rocket">
+      <div class="exhaust-flame"></div>
+      <div class="rocket-body">
+        <div class="body"></div>
+        <div class="fin fin-left"></div>
+        <div class="fin fin-right"></div>
+        <div class="window"></div>
+      </div>
+    </div>
+
+    <ul class="exhaust-fumes">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</template>
+
+<script type="text/javascript">
+  Vue.component('rocket', {
+  template: '#rocket',
+  data(){
+      return {
+        flying: null,
+        start: null,
+        counting: null,
+        countdown: 3,
+        space: {}
+      }
+    },
+    methods: {
+      launchRocket(){
+        this.flying = true;
+      },
+      initcountdown(){
+        const countingdown = setInterval(() => {
+          this.countdown--;
+          if (this.countdown === 0){
+            this.counting = false;
+            this.flying = true;
+            clearInterval(countingdown);
+          }
+        }, 1000);
+      },
+      generateStars(){
+        const field = 2;
+        const distanceLayer = 3;
+        const galaxy = this.$el.getElementsByClassName('galaxy')[0];
+
+        for (let i=0; i<distanceLayer; i++){
+          this.$set(this.space, 'field'+i, {});
+          for (let j=0; j<field; j++){
+            this.$set(this.space['field'+i], 'distance-layer'+j, []);
+
+            for (let k=0; k<10; k++){
+              const star = {
+                "left": galaxy.clientWidth * Math.random(),
+                "top": galaxy.clientHeight / 2 * Math.random()
+              };
+
+              this.$set(this.space['field'+i]['distance-layer'+j], k, star);
+            }
+          }
+        }
+      }
+    },
+    mounted(){
+      this.$nextTick(function(){
+        setTimeout(() => {
+          this.counting = true;
+          this.initcountdown();
+        }, 3500);
+
+        // timeout because even in nextTick the DOM is still not ready..
+        setTimeout(() => {
+          this.generateStars();
+        }, 0)
+      });
+    }
+});
+
+new Vue({
+  el: '#app'
+});
+</script>
