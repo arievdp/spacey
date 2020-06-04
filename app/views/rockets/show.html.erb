@@ -29,13 +29,14 @@
     <br>
     Location: <%= @rocket.location %>
   </p>
-
-        <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
-        <%= link_to 'Back', rockets_path%> |
-        <%= link_to "Delete #{@rocket.name}",
-            rocket_path(@rocket),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+    <% if current_user == @rocket.user %>
+      <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
+      <%= link_to 'Back', rockets_path%> |
+      <%= link_to "Delete #{@rocket.name}",
+          rocket_path(@rocket),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+    <% end %>
 
     </div>
     <div class="col-5">
