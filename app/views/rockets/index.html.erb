@@ -1,7 +1,7 @@
 <div class="container mt-3 ">
   <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center dp-24 dp-border-radius">
     <div class="search-bar d-flex justify-content-center p-3 dp-01 dp-border-radius">
-    <div class="search_field"><%= form_tag rockets_path, method: :get do %>
+    <div class="search_field dp-border-radius"><%= form_tag rockets_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
@@ -45,7 +45,7 @@
       </ul>
       <div class = "d-flex justify-content-center mt-3">
         <!-- <button class="primary ghost m-auto"> -->
-          <%= link_to 'BOOK NOW', rocket_path(rocket), class:"btn btn-outline-dark ml-2" %>
+          <%= link_to 'BOOK NOW', rocket_path(rocket), class:"btn btn-outline-dark" %>
       <!--   </button> -->
       </div>
     </div>

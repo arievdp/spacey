@@ -2,6 +2,10 @@
 //styling
 $dp-border-radius: 15px !important;
 
+.dp-border-radius {
+  border-radius: $dp-border-radius;
+}
+
 //colors
 
 $dp-black: #121212;
