@@ -4,13 +4,6 @@ class RocketsController < ApplicationController
 
   def index
     @rockets = Rocket.all
-    @rockets = Rocket.geocoded
-    @markers = @rockets.map do |rocket|
-      {
-        lat: rocket.latitude,
-        lng: rocket.longitude
-      }
-    end
   end
 
   def new
@@ -33,6 +26,11 @@ class RocketsController < ApplicationController
     @review = Review.new
     @order = Order.new
     @user = User.new
+    # @rocket = Rocket.geocoded
+    @markers = {
+      lat: @rocket.latitude,
+      lng: @rocket.longitude
+    }
   end
 
   def edit; end
