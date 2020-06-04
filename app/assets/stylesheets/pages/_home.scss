@@ -28,10 +28,17 @@
 }
 
 .search-bar {
-  // height: 150px;
   width: 400px;
   background-color: light-gray;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px !important;
-  // margin-top: 24px !important;
   border-radius: 12px !important;  
+}
+
+.container {
+  width: 1300px;
+}
+
+.about-section {
+  padding-top: 10rem;
+  background: linear-gradient(to bottom, #2F251C 0, #563B34 25%, #514141 50%, rgba(22,22,22,0.9) 75%,#010207 100%);
 }

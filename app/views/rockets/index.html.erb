@@ -18,30 +18,32 @@
 </div>
 
 <div class="container">
-  <div class="cards card-container">
-    <% @rockets.each do |rocket| %>
-      <div class="show-card mx-auto" style="width: 19rem;">
-        <div class="card-img-top " alt="rocket card">
-            <% if rocket.rocket_images.first.nil? %>
-              <div class="img-container-rocket" style="background-image: url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); height: 200px; background-position: center;">
+  <div class="card-container">
+    <div class="col-sm-12 col-md-6 d-flex">
+      <% @rockets.each do |rocket| %>
+        <div class="show-card mx-auto" style="width: 18rem;">
+          <div class="card-img-top " alt="rocket card">
+              <% if rocket.rocket_images.first.nil? %>
+                <div class="img-container-rocket" style="background-image: url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); height: 200px; background-position: center;">
+                </div>
+              <% else %>
+                <div class="img-container-rocket" style="background-image: url('<%= rails_blob_url(rocket.rocket_images.first) %>'); height: 200px; background-position: center; ">
+                </div>
+              <% end %>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to rocket.name, rocket_path(rocket) %></h5>
+              <div class="cards-container">
+                <p class="card-text">Payload: <%= rocket.payload %>KG</p>
+                <p class="card-text">Location: <%= rocket.location %></p>
+                <p class="card-text">Price: $<%= rocket.price %>/day</p>
               </div>
-            <% else %>
-              <div class="img-container-rocket" style="background-image: url('<%= rails_blob_url(rocket.rocket_images.first) %>'); height: 200px; background-position: center; ">
-              </div>
-            <% end %>
-          </a>
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to rocket.name, rocket_path(rocket) %></h5>
-            <div class="cards-container">
-              <p class="card-text">Payload: <%= rocket.payload %>KG</p>
-              <p class="card-text">Location: <%= rocket.location %></p>
-              <p class="card-text">Price: $<%= rocket.price %>/day</p>
+              <%= link_to 'Learn more', rocket_path(rocket), :class => "btn btn-primary" %>
             </div>
-            <%= link_to 'Learn more', rocket_path(rocket), :class => "btn btn-primary" %>
           </div>
         </div>
-      </div>
-  <% end %>
+    <% end %>
+    </div>
   </div>
 </div>
 
