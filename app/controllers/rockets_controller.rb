@@ -4,6 +4,11 @@ class RocketsController < ApplicationController
 
   def index
     @rockets = Rocket.all
+    if params[:query].present?
+      @rockets = Rocket.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @rockets = Rocket.all
+    end
   end
 
   def new
