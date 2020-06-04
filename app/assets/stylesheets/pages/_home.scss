@@ -5,8 +5,12 @@
   background-position: center center;              /* optional, center the image */
   height: 100vh;
   margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  align-items: center;
   h1 {
     color: white;
+    font-size: 8rem;
   }
   p {
     color: white;
@@ -16,7 +20,6 @@
 .jumbotron-fluid {
     text-shadow: #444 0 1px 1px;
     color: #FFF;
-    position: relative;
     height: 40vh;
 
     display: flex;
@@ -31,8 +34,10 @@
   width: 400px;
   background-color: light-gray;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px !important;
-  border-radius: 12px !important;  
+  // margin-top: 24px !important;
+  border-radius: 12px !important;
 }
+
 
 .container {
   width: 1300px;
