@@ -12,7 +12,7 @@
       placeholder: "Find a rocket"
       %>
     </div>
-    <div><%= submit_tag "Search", class: "btn btn-primary" %></div>
+    <div><%= submit_tag "Search", class: "btn btn-outline-light ml-2" %></div>
   <% end %>
   </div>
 </div>
@@ -37,7 +37,7 @@
               <p class="card-text">Location: <%= rocket.location %></p>
               <p class="card-text">Price: $<%= rocket.price %>/day</p>
             </div>
-            <%= link_to 'Learn more', rocket_path(rocket), :class => "btn btn-primary" %>
+            <%= link_to 'Learn more', rocket_path(rocket), :class => "btn btn-outline-light btn-lg m-3" %>
           </div>
         </div>
       </div>

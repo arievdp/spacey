@@ -1,6 +1,11 @@
 .navbar {
   justify-content: space-between;
   background-color: none;
+  a{
+    color: white;
+  }
+  width: 100vw;
+  padding: 17px 50px;
 }
 
 .navbar .navbar-collapse {
