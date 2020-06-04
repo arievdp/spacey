@@ -29,7 +29,8 @@ class RocketsController < ApplicationController
     # @rocket = Rocket.geocoded
     @markers = {
       lat: @rocket.latitude,
-      lng: @rocket.longitude
+      lng: @rocket.longitude,
+      image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
     }
   end
 
