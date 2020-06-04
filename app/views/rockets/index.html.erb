@@ -1,10 +1,20 @@
 <div class="container mt-3 ">
-  <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center dp-24">
-    <h1>Rockets available for hire</h1>
+  <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center dp-24 dp-border-radius">
+    <div class="search-bar d-flex justify-content-center p-3 dp-01 dp-border-radius">
+    <div class="search_field"><%= form_tag rockets_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search our rockets"
+      %>
+    </div>
+    <div><%= submit_tag "Search", class: "btn btn-outline-light ml-2" %></div>
+  <% end %>
+  </div>
   </div>
 </div>
-<div class="container mt-3 d-flex justify-content-center">
-  <div class="search-bar d-flex justify-content-center p-3">
+<!-- <div class="container mt-3 d-flex justify-content-center">
+  <div class="search-bar d-flex justify-content-center p-3 dp-24">
     <div class="search_field"><%= form_tag rockets_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
@@ -15,15 +25,15 @@
     <div><%= submit_tag "Search", class: "btn btn-outline-light ml-2" %></div>
   <% end %>
   </div>
-</div>
+</div> -->
 
-<div class="body-container container">
-  <div class="cards card-container d-flex justify-content-between">
+<div class="container mt-3">
+  <div class="cards card-container d-flex justify-content-between m-0">
     <% @rockets.each do |rocket| %>
     <% if rocket.rocket_images.first.nil? %>
-    <div class="dp-card-product-primary dp-08 mx-auto" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.9)), url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); background-position: center;">
+    <div class="dp-card-product-primary dp-08" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.9)), url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); background-position: center;">
     <% else %>
-    <div class="dp-card-product-primary dp-08 mxauto" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.9)), url('<%= rails_blob_url(rocket.rocket_images.first) %>'); background-position: center; ">
+    <div class="dp-card-product-primary dp-08" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.9)), url('<%= rails_blob_url(rocket.rocket_images.first) %>'); background-position: center; ">
     <% end %>
       <h3><%= rocket.name %></h3>
     <div class="dp-card-product-secondary">
