@@ -2,7 +2,9 @@
   <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center">
     <h1>Rockets available for hire</h1>
   </div>
-  <div class="container d-flex justify-content-between">
+</div>
+<div class="container mt-3 d-flex justify-content-center">
+  <div class="search-bar d-flex justify-content-center p-3">
     <div class="search_field"><%= form_tag rockets_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
@@ -15,10 +17,10 @@
   </div>
 </div>
 
-<div class="container mt-4">
+<div class="container">
   <div class="cards card-container">
     <% @rockets.each do |rocket| %>
-      <div class="show-card mx-auto" style="width: 18rem;">
+      <div class="show-card mx-auto" style="width: 19rem;">
         <div class="card-img-top " alt="rocket card">
             <% if rocket.rocket_images.first.nil? %>
               <div class="img-container-rocket" style="background-image: url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); height: 200px; background-position: center;">
