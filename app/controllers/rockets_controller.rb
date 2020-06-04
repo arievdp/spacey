@@ -32,9 +32,11 @@ class RocketsController < ApplicationController
 
   def update
     @rocket.update(rocket_params)
-    @rocket.save!
-
-    redirect_to rocket_path(@rocket)
+    if @rocket.save
+      redirect_to rocket_path(@rocket)
+    else
+      redirect_to edit_rocket_path(@rocket), alert: @rocket.errors.full_messages
+    end
   end
 
   def destroy

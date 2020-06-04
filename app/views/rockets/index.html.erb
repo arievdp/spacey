@@ -2,6 +2,16 @@
   <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center">
     <h1>Rockets available for hire</h1>
   </div>
+  <div class="container d-flex">
+    <%= form_tag rockets_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a rocket"
+      %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+  </div>
 </div>
 
 <div class="container mt-4">
