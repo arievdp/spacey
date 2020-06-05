@@ -16,7 +16,7 @@
 
 <div class="container mt-5 card-body">
 
-  <div class="cards card-container justify-content-between m-0 ">
+  <div class="cards card-container justify-content-center ">
     <% @rockets.each do |rocket| %>
 
       <% if rocket.rocket_images.first.nil? %>
@@ -31,7 +31,11 @@
             <h6>Details</h6>
             <ul>
               <li><i class="fas fa-dollar-sign mr-3"></i><%= rocket.price %> /day</li>
+<<<<<<< HEAD
               <li><i class="fas fa-thumbtack mr-3"></i><% rocket.location%></li>
+=======
+              <li><i class="fas fa-thumbtack mr-3"></i><%= rocket.location %></li>
+>>>>>>> master
               <li><i class="fas fa-rocket mr-3"></i><%= rocket.payload %> KG</li>
             </ul>
             <div class = "d-flex justify-content-center mt-3">
@@ -45,10 +49,7 @@
     </div>
   </div>
 </div>
-
-<div class="container dp-00 dp-border-radius">
-  <div id="map" class="mt-3"  style="width: 100%; height: 300px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+<div id="map" class="container mt-3 dp-01 dp-border-radius"  style="width: 100%; height: 300px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
