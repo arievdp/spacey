@@ -12,6 +12,7 @@
 
 .navbar .navbar-collapse {
   flex-grow: 0;
+
 }
 
 .navbar .navbar-brand img {
@@ -23,4 +24,15 @@
   a.nav-link{
     color: white;
   }
+}
+.home{
+  background-color: #00000026;
+}
+
+.home a{
+  color: white;
+}
+.dropdown-item:hover{
+  background-color:transparent;
+  color: #c1c1c1;
 }
