@@ -13,19 +13,6 @@
   </div>
   </div>
 </div>
-<!-- <div class="container mt-3 d-flex justify-content-center">
-  <div class="search-bar d-flex justify-content-center p-3 dp-24">
-    <div class="search_field"><%= form_tag rockets_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a rocket"
-      %>
-    </div>
-    <div><%= submit_tag "Search", class: "btn btn-outline-light ml-2" %></div>
-  <% end %>
-  </div>
-</div> -->
 
 <div class="container mt-5 card-body">
 
@@ -33,7 +20,7 @@
       <% @rockets.each do |rocket| %>
 
         <% if rocket.rocket_images.first.nil? %>
-          <div class="dp-card-product-primary col-mx-4 dp-08" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.9)), url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); background-position: center;">
+          <div class="dp-card-product-primary dp-08" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.9)), url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); background-position: center;">
 
         <% else %>
           <div class="dp-card-product-primary dp-08" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.9)), url('<%= rails_blob_url(rocket.rocket_images.first) %>'); background-position: center; ">
