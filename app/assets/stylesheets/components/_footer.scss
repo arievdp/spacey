@@ -1,6 +1,8 @@
 .footer {
   width: 100%;
   display: flex;
+  position: relative;
+  bottom:0;
   align-items: center;
   justify-content: space-between;
   height: 60px;
@@ -9,11 +11,11 @@
 }
 .footer-links {
   display: flex;
+  opacity: .5;
   align-items: center;
 }
 .footer-links a {
   color: black;
-  opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -26,6 +28,8 @@
 }
 
 .footer-copyright{
-  color: black
+  color: black;
+  opacity: .8;
 }
+
 
