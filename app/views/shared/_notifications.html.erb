@@ -1,6 +1,6 @@
 <div class="notification dp-04 dp-border-radius mt-3">
   <% if review.order.user.avatar.attached? %>
-    <%= cl_image_tag current_user.avatar.key, class:"avatar-large" %>
+    <%= cl_image_tag review.order.user.avatar.key, class:"avatar-large" %>
   <% else %>
     <img src='https://kitt.lewagon.com/placeholder/users/random' class="avatar-large" />
   <% end %>
