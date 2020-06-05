@@ -16,28 +16,18 @@
         </h2>
       </div>
     </p>
-
-    <p>
-      <strong>Details:</strong>
-      <br>
-      Start Date: <%= @order.start_date %>
-      <br>
-      End Date: <%= @order.end_date %>
-      <br>
-      Total Price: $<%= @order.total_price %>
-      <br>
-      Location: <%= @order.rocket.location %>
-    </p>
-    <%= link_to 'Edit ', edit_rocket_order_path(@order.rocket, @order) %> |
-    <%= button_to "Delete this booking",
-            rocket_order_path(@order.rocket, @order),
-            method: :delete,
-            class: 'btn btn-secondary btn-small',
-            data: { confirm: "Are you sure?" } %>
-
+    <div class="rocket-details m-3">
+      <p><i class="fas fa-calendar-week mr-3"></i></i>From <%= @order.start_date %> until <%= @order.end_date %></p>
+      <p><i class="fas fa-dollar-sign mr-3"></i><%= @order.total_price %> / day
+      <p><i class="fas fa-location-arrow mr-3"></i><%= @order.rocket.location %></p>
+      <p><strong>Description:</strong></p>
+      <p><%= @order.rocket.description %></p>
+    </div>
+    <%= link_to 'Edit', edit_rocket_order_path(@order.rocket, @order), class:"btn btn-outline-dark dp-border-radius m-3" %>
+    <%= link_to "Delete", rocket_order_path(@order.rocket, @order), method: :delete, class: 'btn btn-outline-dark dp-border-radius m-3', data: { confirm: "Are you sure?" } %>
     </div>
     <div class="col-5">
-      <div class="show-card">
+      <div class="show-card dp-04 p-3">
         <h2>Add a review!</h2>
         <%= render 'review-form', order: @order, review: @review %>
       </div>
