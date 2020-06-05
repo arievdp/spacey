@@ -9,6 +9,16 @@ class RocketsController < ApplicationController
     else
       @rockets = Rocket.all
     end
+    @markers = @rockets.geocoded.map do |rocket|
+      {
+        lat: rocket.latitude,
+        lng: rocket.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { rocket: rocket }),
+        image_url: helpers.asset_url('https://img.icons8.com/plasticine/100/000000/rocket.png')
+      }
+    end
+    @order = Order.new
+    @user = User.new
   end
 
   def new
@@ -32,11 +42,11 @@ class RocketsController < ApplicationController
     @order = Order.new
     @user = User.new
     # @rocket = Rocket.geocoded
-    @markers = {
+    @markers = [{
       lat: @rocket.latitude,
       lng: @rocket.longitude,
       image_url: helpers.asset_url('https://img.icons8.com/plasticine/100/000000/rocket.png')
-    }
+    }]
   end
 
   def edit; end
