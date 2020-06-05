@@ -10,7 +10,7 @@ require("channels")
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-import { vue } from '../plugins/rocket_launch';
+// import { vue } from '../plugins/rocket_launch';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
