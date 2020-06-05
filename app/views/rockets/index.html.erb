@@ -1,6 +1,6 @@
 <div class="container mt-3 ">
-  <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center dp-24 dp-border-radius">
-    <div class="search-bar d-flex justify-content-center p-3 dp-01 dp-border-radius">
+  <div class="text-center img-container-rocket-index d-flex justify-content-center align-items-center dp-00 dp-border-radius">
+    <div class="search-bar d-flex justify-content-center p-3 dp-24 dp-border-radius">
     <div class="search_field dp-border-radius"><%= form_tag rockets_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
@@ -8,7 +8,7 @@
       placeholder: "Search our rockets"
       %>
     </div>
-    <div><%= submit_tag "Search", class: "btn btn-outline-light ml-2" %></div>
+    <div><%= submit_tag "Search", class: "btn btn-outline-dark ml-2 dp-border-radius" %></div>
   <% end %>
   </div>
   </div>
@@ -27,7 +27,7 @@
   </div>
 </div> -->
 
-<div class="container mt-3">
+<div class="container mt-5">
   <div class="cards card-container d-flex justify-content-between m-0">
     <% @rockets.each do |rocket| %>
     <% if rocket.rocket_images.first.nil? %>
@@ -45,7 +45,7 @@
       </ul>
       <div class = "d-flex justify-content-center mt-3">
         <!-- <button class="primary ghost m-auto"> -->
-          <%= link_to 'BOOK NOW', rocket_path(rocket), class:"btn btn-outline-dark" %>
+          <%= link_to 'BOOK NOW', rocket_path(rocket), class:"btn btn-outline-dark dp-border-radius" %>
       <!--   </button> -->
       </div>
     </div>

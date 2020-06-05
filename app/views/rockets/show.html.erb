@@ -1,9 +1,9 @@
 <div class="body-container container mt-3">
   <% if @rocket.rocket_images.first.nil? %>
-    <div class="img-container-rocket" style="background-image: url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); background-position: center;">
+    <div class="img-container-rocket dp-02 dp-border-radius" style="background-image: url('https://afar-production.imgix.net/uploads/images/afar_post_headers/images/JSlyHAhjDp/original_SpaceHERO_0000_Journey_20To_20Space_203D_20film_20-_20Space_20Launch_20System_20Launch.jpg?auto=compress,format&fit=crop&crop=top&lossless=true&w=1600&h=700'); background-position: center;">
     </div>
     <% else %>
-    <div class="img-container-rocket" style="background-image: url('<%= rails_blob_url(@rocket.rocket_images.first) %>'); background-position: center; ">
+    <div class="img-container-rocket dp-02 dp-border-radius" style="background-image: url('<%= rails_blob_url(@rocket.rocket_images.first) %>'); background-position: center; ">
 
     </div>
   <% end %>
@@ -17,17 +17,16 @@
         </h2>
       </div>
     </p>
-
-  <p>
-    <strong>Details:</strong>
-    <br>
-    Payload: <%= @rocket.payload %>
-    <br>
-    Price: $<%= @rocket.price %> /day
-    <br>
-    Description: <%= @rocket.description %>
-    <br>
-    Location: <%= @rocket.location %>
+  <div class="rocket-subheading m-3">
+    <h5><strong>Details:</strong></h5>
+  </div>
+  <div class="rocket-details m-3">
+    <p><i class="fas fa-rocket mr-3"></i><%= @rocket.payload %>
+    <p><i class="fas fa-dollar-sign mr-3"></i><%= @rocket.price %> /day</p>
+    <p><i class="fas fa-location-arrow mr-3"></i><%= @rocket.location %></p>
+    <p><strong>Description:</strong></p>
+    <p><%= @rocket.description %></p>
+  </div>
   </p>
     <% if current_user == @rocket.user %>
       <%= link_to 'Edit', edit_rocket_path(@rocket) %> |
@@ -40,9 +39,11 @@
 
     </div>
     <div class="col-5">
-      <div class="show-card dp-16">
+      <div class="show-card dp-04">
         <h2>Book now!</h2>
-        <%= render 'shared/order_form', rocket: @rocket, order: @order %>
+        <div class="new-review mt-3">
+          <%= render 'shared/order_form', rocket: @rocket, order: @order %>
+        </div>
       </div>
     </div>
   </div>
@@ -50,11 +51,13 @@
     <div class="col-7 border-top">
       <div class="mt-3">
         <h2>Reviews</h2>
-        <% @rocket.orders.each do |order|%>
-          <% order.reviews.each do |review| %>
-            <%= render 'shared/notifications', review: review %>
+        <div class="rocket-reviews m-3">
+          <% @rocket.orders.each do |order|%>
+            <% order.reviews.each do |review| %>
+              <%= render 'shared/notifications', review: review, class: "dp-border-radius dp-04 mt-3" %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
     <div class="col-5">

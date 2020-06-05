@@ -1,17 +1,20 @@
 <div class="container mt-3 show-container dp-03 dp-container px-3">
   <div class="row">
     <div class="col-sm-12 col-md-8">
-      <div class="dashboard-heading mb-4">
+      <div class="dashboard mb-4">
         <h1>User Dashboard</h1>
       </div>
-      <div class="dashboard-user-welcome mb-4">
+      <div class="dashboard m-3">
         <h5><strong>Welcome back!</strong>
         <span><%= current_user.first_name %></span>
         <span><%= current_user.last_name %></span></h5>
       </div>
-      <div class="dashboard-user-details mb-5">
+      <div class="dashboard m-3">
         <p><i class="far fa-envelope mr-3"></i><%= current_user.email %></p>
         <p><i class="fas fa-phone mr-3"></i><%= current_user.phone_number%></p>
+      </div>
+      <div class="dashboard m-3">
+        <%= link_to 'Edit profile', edit_user_registration_path, class:'btn btn-outline-dark dp-border-radius mb-3'%>
       </div>
     </div>
     <div class="col-sm-12 col-md-4">
@@ -22,7 +25,7 @@
   </div>
   <div class="row d-flex">
     <div class="col-sm-12 col-md-8">
-      <table class="table table-striped">
+      <table class="table dp-border-radius">
         <tr>
           <th>Order #</th>
           <th>Start Date</th>
@@ -42,9 +45,9 @@
     </div>
 
     <div class="col-sm-12 col-md-4 d-flex flex-column">
-      <div class="rocket-dash-container mb-3">
+      <div class="mb-3">
         <div class="list-group dp-border-radius">
-          <li class="list-group-item list-group-item-secondary">
+          <li class="list-group-item">
             <strong>Manage Rockets</strong>
           </li>
           <% @user.rockets.each do |rocket|%>
@@ -52,8 +55,8 @@
           <% end %>
         </div>
       </div>
-      <%= link_to 'Add a new Rocket ', new_rocket_path(@rocket), class:'btn btn-outline-light btn-lg mt-auto dp-border-radius mb-3'%>
-      <%= link_to 'Explore all Rockets ', rockets_path, class:'btn btn-outline-light btn-lg mt-auto dp-border-radius mb-3'%>
+      <%= link_to 'Add a new Rocket ', new_rocket_path(@rocket), class:'btn btn-outline-dark btn-lg mt-auto dp-border-radius mb-3'%>
+      <%= link_to 'Explore all Rockets ', rockets_path, class:'btn btn-outline-dark btn-lg mt-auto dp-border-radius mb-3'%>
     </div>
   </div>
 </div>
