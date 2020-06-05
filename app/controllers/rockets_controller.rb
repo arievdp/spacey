@@ -17,8 +17,6 @@ class RocketsController < ApplicationController
         image_url: helpers.asset_url('https://img.icons8.com/plasticine/100/000000/rocket.png')
       }
     end
-    @order = Order.new
-    @user = User.new
   end
 
   def new
@@ -43,8 +41,8 @@ class RocketsController < ApplicationController
     @user = User.new
     # @rocket = Rocket.geocoded
     @markers = [{
-      lat: @rocket.latitude,
-      lng: @rocket.longitude,
+      lat: rocket.latitude,
+      lng: rocket.longitude,
       image_url: helpers.asset_url('https://img.icons8.com/plasticine/100/000000/rocket.png')
     }]
   end
