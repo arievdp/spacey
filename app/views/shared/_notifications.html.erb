@@ -1,5 +1,9 @@
-<div class="notification dp-16 dp-border-radius">
-  <img src='https://kitt.lewagon.com/placeholder/users/random' class="avatar-large" />
+<div class="notification dp-04 dp-border-radius mt-3">
+  <% if review.order.user.avatar.nil? %>
+    <img src='https://kitt.lewagon.com/placeholder/users/random' class="avatar-large" />
+  <% else %>
+    <%= image_tag review.order.user.avatar, class:"avatar-large" %>
+  <% end %>
   <div class="notification-content">
     <p><small><%= review.order.user.first_name %> <%= review.order.user.last_name %></small></p>
     <% review.rating.to_i.times do  %>

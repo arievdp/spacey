@@ -1,17 +1,11 @@
 // This is where you override dark theme variables
-//styling
-$dp-border-radius: 15px !important;
-
-.dp-border-radius {
-  border-radius: $dp-border-radius;
-}
 
 //colors
 
 $dp-black: #121212;
-$db-black-em-med: rgba(0, 0, 0, 0.74);
-$dp-bg: #121212;
-$dp-accent: #FF8A01;
+$dp-black-em-med: rgba(0, 0, 0, 0.74);
+$dp-bg: #fefefe;
+$dp-accent: #72D3F5;
 $dp-em-hi: rgba(255, 255, 255, 0.87);
 $dp-em-med: rgba(255, 255, 255, 0.6);
 $dp-disabled: rgba(255, 255, 255, 0.38);
@@ -26,40 +20,89 @@ $dp-12: rgba(255, 255, 255, 0.14);
 $dp-16: rgba(255, 255, 255, 0.15);
 $dp-24: rgba(255, 255, 255, 0.16);
 
+//styling
+$dp-border-radius: 15px !important;
+
+.dp-border-radius {
+  border-radius: $dp-border-radius;
+}
+
+.dp-border-accent {
+
+}
+
 p {
-  color: $dp-em-med;
+  color: $dp-black-em-med;
 }
 
 h1 {
-  color: $dp-em-hi;
+  color: $dp-black;
 }
 
 h2 {
-  color: $dp-em-hi;
+  color: $dp-black;
 }
 
 h3 {
-  color: $dp-em-hi;
+  color: $dp-black;
 }
 
 h4 {
-  color: $dp-em-hi;
+  color: $dp-black;
 }
 
 h5 {
-  color: $dp-em-hi;
+  color: $dp-black;
 }
 
 h6 {
-  color: $dp-em-hi;
+  color: $dp-black;
 }
 
 ul {
-  color: $dp-em-med;
+  color: $dp-black-em-med;
 }
 
 ol {
+  color: $dp-black-em-med;
+}
+
+.light-text {
+  p {
   color: $dp-em-med;
+  }
+
+  h1 {
+    color: $dp-em-hi;
+  }
+
+  h2 {
+    color: $dp-em-hi;
+  }
+
+  h3 {
+    color: $dp-em-hi;
+  }
+
+  h4 {
+    color: $dp-em-hi;
+  }
+
+  h5 {
+    color: $dp-em-hi;
+  }
+
+  h6 {
+    color: $dp-em-hi;
+  }
+
+  ul {
+    color: $dp-black-em-med;
+  }
+
+  ol {
+    color: $dp-black-em-med;
+  }
 }
 
 .dp-bg-emphasis {
@@ -72,8 +115,8 @@ ol {
 }
 
 .dp-00 {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)) $dp-bg !important;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)) $dp-bg;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .dp-01 {
