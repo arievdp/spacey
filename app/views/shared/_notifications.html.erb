@@ -1,8 +1,8 @@
 <div class="notification dp-04 dp-border-radius mt-3">
-  <% if review.order.user.avatar.nil? %>
-    <img src='https://kitt.lewagon.com/placeholder/users/random' class="avatar-large" />
+  <% if review.order.user.avatar.attached? %>
+    <%= cl_image_tag current_user.avatar.key, class:"avatar-large" %>
   <% else %>
-    <%= image_tag review.order.user.avatar, class:"avatar-large" %>
+    <img src='https://kitt.lewagon.com/placeholder/users/random' class="avatar-large" />
   <% end %>
   <div class="notification-content">
     <p><small><%= review.order.user.first_name %> <%= review.order.user.last_name %></small></p>
