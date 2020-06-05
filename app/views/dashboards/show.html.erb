@@ -50,8 +50,12 @@
           <li class="list-group-item">
             <strong>Manage Rockets</strong>
           </li>
-          <% @user.rockets.each do |rocket|%>
-            <a href="<%=rocket_path(rocket)%>" class="list-group-item list-group-item-action"><%= rocket.name %></a>
+          <% if @user.rockets.empty? %>
+            <p class="list-group-item">You haven't listed any rockets</p>
+          <% else %>
+            <% @user.rockets.each do |rocket|%>
+              <a href="<%=rocket_path(rocket)%>" class="list-group-item list-group-item-action"><%= rocket.name %></a>
+            <% end %>
           <% end %>
         </div>
       </div>
