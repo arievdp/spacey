@@ -19,7 +19,9 @@
     </div>
     <div class="col-sm-12 col-md-4">
       <div class="avatar-container">
-        <img src="https://source.unsplash.com/random/200x200" class="img-center-container" >
+        <!-- <img src="https://source.unsplash.com/random/200x200" class="img-center-container" > -->
+
+        <%= cl_image_tag current_user.avatar.key, height: 300, width: 400, crop: :fill, class: "img-center-container" %>
       </div>
     </div>
   </div>
