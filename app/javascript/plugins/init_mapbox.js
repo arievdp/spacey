@@ -17,7 +17,7 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/rithvik/ckb0ayc9r0kpd1ilgsod48oym',
       center: [markers['lng'], markers['lat']],
-      zoom: 7
+      zoom: 10
     });
     const popup = new mapboxgl.Popup().setHTML(markers.infoWindow);
 
@@ -38,7 +38,6 @@ const initMapbox = () => {
 
 }
 
-  // Pass the element as an argument to the new marker
 
 
 
