@@ -1,15 +1,12 @@
 .card-container {
-  display: grid;
-  flex-grow: 1;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap:10px;
-  margin:10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
-
+  width: 90%;
   .btn {
     margin-bottom: auto;
   }

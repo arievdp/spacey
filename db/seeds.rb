@@ -12,7 +12,6 @@ arraynum = 0
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   phone_number: Faker::PhoneNumber.phone_number,
-  avatar: "https://source.unsplash.com/random/200x200"
   )
   new_user.save!
   new_rocket = Rocket.new(

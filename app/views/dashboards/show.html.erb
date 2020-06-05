@@ -19,7 +19,11 @@
     </div>
     <div class="col-sm-12 col-md-4">
       <div class="avatar-container">
-        <img src="https://source.unsplash.com/random/200x200" class="img-center-container" >
+        <% if current_user.avatar.attached? %>
+          <%= cl_image_tag current_user.avatar.key, height: 300, width: 300, crop: :fill, class: "img-center-container" %>
+        <% else %>
+          <img src="https://source.unsplash.com/random/200x200" class="img-center-container" >
+        <% end %>
       </div>
     </div>
   </div>
@@ -50,8 +54,12 @@
           <li class="list-group-item">
             <strong>Manage Rockets</strong>
           </li>
-          <% @user.rockets.each do |rocket|%>
-            <a href="<%=rocket_path(rocket)%>" class="list-group-item list-group-item-action"><%= rocket.name %></a>
+          <% if @user.rockets.empty? %>
+            <p class="list-group-item">You haven't listed any rockets</p>
+          <% else %>
+            <% @user.rockets.each do |rocket|%>
+              <a href="<%=rocket_path(rocket)%>" class="list-group-item list-group-item-action"><%= rocket.name %></a>
+            <% end %>
           <% end %>
         </div>
       </div>
