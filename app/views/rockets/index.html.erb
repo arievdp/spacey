@@ -37,25 +37,24 @@
     <% end %>
       <h3><%= rocket.name %></h3>
     <div class="dp-card-product-secondary">
-    <h6>Details</h6>
-      <ul>
-        <li><i class="fas fa-dollar-sign mr-3"></i><%= rocket.price %> /day</li>
-        <li><i class="fas fa-thumbtack mr-3"></i><%= rocket.location %></li>
-        <li><i class="fas fa-rocket mr-3"></i><%= rocket.payload %> KG</li>
-      </ul>
-      <div class = "d-flex justify-content-center mt-3">
-        <!-- <button class="primary ghost m-auto"> -->
-          <%= link_to 'BOOK NOW', rocket_path(rocket), class:"btn btn-outline-dark dp-border-radius" %>
-      <!--   </button> -->
+      <h6>Details</h6>
+        <ul>
+          <li><i class="fas fa-dollar-sign mr-3"></i><%= rocket.price %> /day</li>
+          <li><i class="fas fa-thumbtack mr-3"></i><%= rocket.location %></li>
+          <li><i class="fas fa-rocket mr-3"></i><%= rocket.payload %> KG</li>
+        </ul>
+        <div class = "d-flex justify-content-center mt-3">
+          <!-- <button class="primary ghost m-auto"> -->
+            <%= link_to 'BOOK NOW', rocket_path(rocket), class:"btn btn-outline-dark dp-border-radius" %>
+        <!--   </button> -->
+        </div>
       </div>
     </div>
+    <% end %>
   </div>
-<% end %>
-</div>
 
-</div>
-
-<div id="map" class="mt-3"  style="width: 100%; height: 300px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div id="map" class="mt-3"  style="width: 100%; height: 300px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
