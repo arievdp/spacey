@@ -1,8 +1,8 @@
 .navbar {
   justify-content: space-between;
-  background-color: none;
+
   a{
-    color: black;
+    color:black;
   }
   width: 100vw;
   padding: 17px 50px;
@@ -18,7 +18,7 @@
 
 .spacer{
   margin-bottom: 100px;
-  a{
+  a.nav-link{
     color: white;
   }
 }
