@@ -16,7 +16,7 @@
 
 <div class="container mt-5 card-body">
 
-  <div class="cards card-container justify-content-between m-0 ">
+  <div class="cards card-container justify-content-center ">
     <% @rockets.each do |rocket| %>
 
       <% if rocket.rocket_images.first.nil? %>
@@ -31,7 +31,7 @@
             <h6>Details</h6>
             <ul>
               <li><i class="fas fa-dollar-sign mr-3"></i><%= rocket.price %> /day</li>
-              <li><i class="fas fa-thumbtack mr-3"></i>rocket.location</li>
+              <li><i class="fas fa-thumbtack mr-3"></i><%= rocket.location %></li>
               <li><i class="fas fa-rocket mr-3"></i><%= rocket.payload %> KG</li>
             </ul>
             <div class = "d-flex justify-content-center mt-3">
