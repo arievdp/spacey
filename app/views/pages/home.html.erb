@@ -3,7 +3,7 @@
   <div class="navbar navbar-expand-sm spacer navbar-dark dp-border-radius ">
   <div class="nav-container container">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://www.dropbox.com/s/lt0umoouigpdgfe/Space-Y-Logo.png?raw=1" %>
+      <%= image_tag "https://res.cloudinary.com/dqzz0gsfo/image/upload/v1591338071/2_l96ae8.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,12 +51,12 @@
   </div>
 
   <div class="container">
-    <h1 class="display-4">SPACE-Y</h1>
+    <h1 class="display-4"><%= image_tag "https://res.cloudinary.com/dqzz0gsfo/image/upload/v1591338071/2_l96ae8.png" %></h1>
     <p class="lead">Peer to peer rocket rental for <em>your</em> day-to-day space exploration</p>
 
     <p>Find the perfect rocket for your next mission</p>
-    <%= link_to 'Explore', rockets_path, :class => "btn btn-outline-light btn-lg m-3" %>
-    <%= link_to 'Sign-up', new_user_registration_path, :class => "btn btn-outline-light btn-lg m-3" %>
+    <%= link_to 'Explore', rockets_path, :class => "btn btn-outline-light btn-lg mr-4 mt-1" %>
+    <%= link_to 'Sign-up', new_user_registration_path, :class => "btn btn-outline-light btn-lg mt-1" %>
   <!--     <a class="btn btn-primary btn-lg" href="/rockets" role="button">Explore All</a>
     <a class="btn btn-primary btn-lg" href="/users/dashboard" role="button">Signup</a> -->
   </div>
