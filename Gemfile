@@ -7,6 +7,7 @@ ruby '2.6.6'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg_search', '~> 2.3.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -35,6 +36,7 @@ gem 'faker'
 gem 'devise'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
+
 
 group :development, :test do
   gem 'pry-byebug'
