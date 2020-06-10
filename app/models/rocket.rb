@@ -18,4 +18,12 @@ class Rocket < ApplicationRecord
     # check whether date is included between start and end date (range)
     # receive one date
   end
+
+  # include PgSearch::Rocket
+  # pg_search_scope :search_by_name_and_location,
+  #   against: [ :name, :location ],
+  #   using: {
+  #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  #   }
+
 end

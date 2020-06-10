@@ -5,6 +5,10 @@ class RocketsController < ApplicationController
   def index
     @rockets = Rocket.all
     if params[:query].present?
+      sql_query = " \
+        rockets.name @@ :query \
+        OR rockets.location @@ :query \
+        "
       @rockets = Rocket.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @rockets = Rocket.all
@@ -17,8 +21,6 @@ class RocketsController < ApplicationController
         image_url: helpers.asset_url('https://img.icons8.com/plasticine/100/000000/rocket.png')
       }
     end
-    @order = Order.new
-    @user = User.new
   end
 
   def new
