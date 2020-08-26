@@ -2,6 +2,8 @@
 
 'Spacey' is a CRUD web app built that mimics the Air BnB booking system, built as part of the Le Wagon web development bootcamp.
 
+url: https://space-y.herokuapp.com/
+
 Spacey uses:
 - Ruby
 - Ruby on Rails
