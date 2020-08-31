@@ -10,6 +10,8 @@ Spacey uses:
 - Javascript
 - Postgresql
 - Bootstrap
+- Cloudinary
+- Mapbox
 
 ## Contributors
 
